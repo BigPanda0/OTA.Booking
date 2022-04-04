@@ -1,0 +1,58 @@
+﻿@model Bookingroom.MVC.ViewModel.RegisterModel
+
+<form asp-action="Register" asp-controller="Account" asp-anti-forgery="true">
+   <body class="mai-splash-screen">
+  <div class="mai-wrapper mai-sign-up">
+    <div class="main-content container">
+      <div class="splash-container row">
+        <div class="col-md-6 form-message">
+            <img class="logo-img mb-4 FonsFamaly" src="/img/LogoLogReg.png" alt="logo" width="199,5" height="93">
+            <span class="splash-description text-center mt-4 mb-4 FonsFamaly">Регистрация</span>
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+          <div class="sign-up-form">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend"><img src="/img/icons8-пользователь-20.png"></div>
+                <input asp-for="Name"class="form-control FonsFamaly" id="username" type="text" placeholder="Имя" autocomplete="off">
+                <span asp-validation-for="Name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend"><img src="/img/icons8-новое-письмо-20.png"></img></div>
+                <input asp-for="Email" class="form-control FonsFamaly" type="text" placeholder="Логин">
+                <span asp-validation-for="Email" />
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend"><img src="/img/icons8-разблокировать-частный-20.png"></img></div>
+                  <input asp-for="Password" class="form-control FonsFamaly" type="password" placeholder="Пароль">
+                  <span asp-validation-for="Password" />
+                </div>
+            </div>
+            <div class="form-group  mb-3">
+              <div class="input-group">
+                <div class="input-group-prepend"><img src="/img/icons8-разблокировать-частный-20.png"></i></div>
+                <input asp-for="ConfirmPassword" class="form-control FonsFamaly" type="password" placeholder="Подтвердите">
+                <span asp-validation-for="ConfirmPassword" />
+              </div>
+            </div>
+            <div class="form-group sign-up-submit">
+              <input type="submit" class="btn btn-lg btn-primary btn-block" data-dismiss="modal"></input>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 user-message">
+          <span class="splash-message text-left FonsFamaly">Добро пожаловать <br>в Offer to Adopt<br></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</form>
+@section scripts{
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
